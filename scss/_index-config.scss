@@ -73,3 +73,25 @@ ul {
   background-color: $dark-color;
   color: $light-color;
 }
+
+.section-info {
+  text-align: center;
+  position: relative;
+
+  .section-title {
+    font-family: $roboto-stack;
+  }
+  .section-lead {
+    padding: 1rem;
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
