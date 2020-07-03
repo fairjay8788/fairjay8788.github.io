@@ -66,7 +66,7 @@ ul {
 
 .bg-lt {
   background-color: $light-color;
-  color: $dark-color;
+  color: black;
 }
 
 .bg-dk {
@@ -82,7 +82,7 @@ ul {
     font-family: $roboto-stack;
   }
   .section-lead {
-    padding: 1rem;
+    padding: 1.5rem;
   }
   &::after {
     content: "";
@@ -93,5 +93,26 @@ ul {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+  }
+}
+
+.category-info {
+  text-align: left;
+  position: relative;
+
+  .category-title {
+    font-family: $roboto-stack;
+  }
+  .category-lead {
+    padding: 1.5rem 0;
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
 }

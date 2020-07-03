@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/number.ico" />
+    <link rel="stylesheet" href="./css/guessnumber.css" />
+    <title>Number Guessing Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="intro">
+        <h3>Instruction</h3>
+        <div id="intro-wrap">
+          <div class="intro-piece current">
+            Welcome to the Number Guessing Game!
+          </div>
+          <div class="intro-piece">
+            In this game, you have 10 chances to guess a four-digit number. They
+            are four differnt digits, so the answer won't be like 6666, or 1212.
+            Please note the first digit could be 0.
+          </div>
+          <div class="intro-piece">
+            After confirming each answer, you will see how good was your guess
+            in the right panel. "xA" means among the four digits you guessed, x
+            of them are correct for BOTH number and position. "yB" means y of
+            the digits are ONLY correct for number.
+          </div>
+          <div class="intro-piece">
+            For example, if the answer is 0239 and your guess is 1309, the
+            result would be "1A2B" since your correctly guessed "9" to be fourth
+            digit (1A) and you are also right that "0" and "3" are in the answer
+            but not the correct position (2B). If you could get a "4A0B" guess
+            in 10 tries, you win the game!
+          </div>
+          <div class="intro-piece">
+            After a few guesses, you will become more and more sure what numbers
+            are in the answer. Based on your guess history, with luck and your
+            high IQ, you will beat the game.
+          </div>
+          <div class="intro-piece">
+            If you feel this is too difficult, don't forget you have and only
+            have 1 hint. Use it wisely<br />
+            It can be a real chanllege. Are you up to it?
+          </div>
+          <div class="intro-piece">
+            Cheat: You can see the answer in DevTools console.^_^
+          </div>
+        </div>
+        <div id="slide-control">
+          <span id="left" class="end"><</span>
+          <span id="right">></span>
+        </div>
+      </aside>
+      <main>
+        <h2 id="heading">Can You Guess It?</h2>
+        <div class="message">You Have 10 Chances.</div>
+        <form id="num-input">
+          <input type="text" id="fig1" class="figure" autocomplete="off" />
+          <input type="text" id="fig2" class="figure" autocomplete="off" />
+          <input type="text" id="fig3" class="figure" autocomplete="off" />
+          <input type="text" id="fig4" class="figure" autocomplete="off" />
+        </form>
+        <div id="btn-wrap">
+          <button type="submit" form="num-input" id="confirm">Confirm</button>
+          <button id="hint">Hint</button>
+          <button type="reset" form="num-input" id="restart">Restart</button>
+        </div>
+      </main>
+      <aside class="result">
+        <h3>History</h3>
+        <ul id="history"></ul>
+      </aside>
+    </div>
+    <footer>
+      Code and Design by Jie Wu
+    </footer>
+  </body>
+  <script src="./js/guessnumber.js"></script>
+</html>

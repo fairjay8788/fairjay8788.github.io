@@ -121,8 +121,8 @@
         text-transform: uppercase;
       }
       p {
-        font-size: 1.2rem;
-        color: $light-color;
+        font-size: 1.5rem;
+        color: $dark-color;
       }
     }
   }
@@ -144,9 +144,7 @@
     .section-info {
       grid-column: 1 / span 2;
     }
-    img {
-      filter: grayscale(1);
-    }
+
     .self-intro {
       padding: 1.5rem;
       background-color: $medium-color;
@@ -158,37 +156,42 @@
 // Works
 #works {
   .work-collection {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.75rem;
     .work-item {
       position: relative;
       overflow: hidden;
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background-color: $primary-color;
-        transform: translate(-50%, -50%);
-        opacity: 0.7;
-        transition: all 0.5s ease;
-        z-index: 1;
-      }
       .screen-shot {
         transform-origin: center center;
         transition: all 1s ease;
       }
+      .item-desc {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -100%;
+        color: $primary-color;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-family: $roboto-stack;
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
       &:hover {
         .screen-shot {
-          transform: scale(1.2);
+          transform: scale(1.5);
+          filter: grayscale(1) brightness(0.4);
         }
-        &::before {
-          width: 1000px;
-          height: 1000px;
+        .item-desc {
+          opacity: 1;
+          top: 0;
         }
       }
     }
