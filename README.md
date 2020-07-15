@@ -1,8 +1,8 @@
 # Jie Wu's Portfolio Website
 
-This is my [portfolio website](https://fairjay8788.github.io/). I put most of my web projects here.
+This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put most of my web projects here.
 
-I'm constantly updating the content as I learn more. Hope it will become something I'm proud of.
+> I'm constantly updating the content as I learn more. Hope it will become something I'm proud of.
 
 ---
 
@@ -12,7 +12,7 @@ I'm constantly updating the content as I learn more. Hope it will become somethi
 
 1. Upload **Number Guessing Game** project
 
-![Screen Shot](./img/ssnumbergame.jpg)
+![Screen Shot](./docs/img/ssnumbergame.jpg)
 
 2. Fill content in **About** section
 3. Seperate **Works** section into different categories
