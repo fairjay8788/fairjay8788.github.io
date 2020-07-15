@@ -1,4 +1,123 @@
-@import "index-config";
+// CONFIG
+
+// varialbes
+
+$primary-color: #f1c40f;
+$secondary-color: #dc2f02;
+$dark-color: #333;
+$light-color: #f4f4f4;
+$medium-color: #999;
+$max-width: 1200px;
+
+$opensans-stack: "Open Sans", sans-serif;
+$raleway-stack: "Raleway", sans-serif;
+$roboto-stack: "Roboto", sans-serif;
+
+// general
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+  color: $dark-color;
+  font-family: $opensans-stack;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+// utilities
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+
+.bg-lt {
+  background-color: $light-color;
+  color: black;
+}
+
+.bg-dk {
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+.section-info {
+  text-align: center;
+  position: relative;
+
+  .section-title {
+    font-family: $roboto-stack;
+  }
+  .section-lead {
+    padding: 1.5rem;
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.category-info {
+  text-align: left;
+  position: relative;
+
+  .category-title {
+    font-family: $roboto-stack;
+  }
+  .category-lead {
+    padding: 1.5rem 0;
+  }
+  &::after {
+    content: "";
+    width: 100px;
+    height: 2px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
 
 // Navbar
 
