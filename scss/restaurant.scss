@@ -1,0 +1,276 @@
+$primary-color: #eece1a;
+
+// CONFIG & Universal
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: url("../img/chinesefood1.jpg") no-repeat center 60% / cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #333, $alpha: 1);
+  color: white;
+  position: absolute;
+  top: 100vh;
+  transition: all 1s linear;
+  &-title {
+    font-size: 4rem;
+    font-weight: 500;
+    .highlight {
+      color: $primary-color;
+    }
+  }
+  &-banner {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    background: rgba($color: #333, $alpha: 0.6);
+    margin: 1.5rem 0;
+  }
+}
+
+.slideUp {
+  top: 0;
+}
+
+// Hamburger
+%layer {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.5s linear;
+}
+
+.nav-hamburger {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+  #toggle {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    &:checked {
+      + .hamburger {
+        transform: rotate(180deg);
+        .upper {
+          transform: rotate(45deg);
+          top: 18px;
+        }
+        .lower {
+          transform: rotate(-45deg);
+          top: 18px;
+        }
+        .mid {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .hamburger {
+    width: 30px;
+    height: 39px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s linear;
+    .upper {
+      @extend %layer;
+      top: 10px;
+    }
+    .mid {
+      @extend %layer;
+      top: 18px;
+    }
+    .lower {
+      @extend %layer;
+      top: 26px;
+    }
+  }
+}
+
+// Overlay Nav
+%pane {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s linear;
+  position: relative;
+}
+.nav {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .left-pane {
+    @extend %pane;
+    background-color: rgba($color: #666, $alpha: 0.6);
+    left: -100%;
+    img {
+      width: 40%;
+      border: 3px solid $primary-color;
+      border-radius: 50%;
+    }
+  }
+  .right-pane {
+    @extend %pane;
+    background-color: rgba($color: #333, $alpha: 0.9);
+    right: -100%;
+    .nav-list {
+      li {
+        list-style-type: none;
+        padding: 1rem;
+        text-align: center;
+        height: 70px;
+        overflow: hidden;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 2rem;
+          font-weight: 300;
+          line-height: 2rem;
+          transition: all 0.2s linear;
+          &:hover {
+            color: yellowgreen;
+            font-size: 2.8rem;
+          }
+        }
+        a.current {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Home Section
+#home {
+  top: 0;
+  background: rgba($color: #333, $alpha: 0.7);
+
+  .wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-4rem);
+  }
+  .social-media {
+    display: flex;
+    li {
+      list-style: none;
+      color: white;
+      transition: color 0.2s linear;
+      a {
+        padding: 0.5rem;
+        text-decoration: none;
+        color: inherit;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// About Section
+#about {
+  .wrapper {
+    margin-top: 70px;
+  }
+  .about-content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px;
+    .about-item {
+      background-color: rgba($color: #666, $alpha: 0.6);
+      padding: 0.5rem;
+      h2 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+// Menu Section
+#menu {
+  .wrapper {
+    margin-top: 70px;
+  }
+  .menu-content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    .menu-item {
+      img {
+        width: 100%;
+        border: 2px $primary-color solid;
+        filter: grayscale(0.9);
+        transition: all 0.5s linear;
+        &:hover {
+          filter: grayscale(0);
+        }
+      }
+      p {
+        padding: 0.6rem;
+        font-size: 1.2rem;
+        text-align: center;
+        background-color: black;
+        color: white;
+        transition: all 0.5s linear;
+        cursor: pointer;
+        &:hover {
+          background-color: $primary-color;
+          color: black;
+        }
+      }
+    }
+  }
+}
+// Contact Section
+#contact {
+  .wrapper {
+    margin-top: 70px;
+  }
+  .contact-content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    .contact-item {
+      background-color: rgba($color: #666, $alpha: 0.6);
+      padding: 0.5rem;
+      text-align: center;
+      i {
+        margin: 1rem 0;
+        color: $primary-color;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}

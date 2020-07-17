@@ -8,7 +8,13 @@ This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put 
 
 ## Commit Log
 
-- Commit 3 _2020.07.03_
+- ### Commit 4 _2020.07.16_
+
+1. Upload **Chinese Restaurant** project
+
+![Screen Shot](./docs/img/sschinesefood.jpg)
+
+- ### Commit 3 _2020.07.03_
 
 1. Upload **Number Guessing Game** project
 
@@ -18,14 +24,14 @@ This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put 
 3. Seperate **Works** section into different categories
 4. Combine commit log with README
 
-- Commit 2 _2020.06.24_
+- ### Commit 2 _2020.06.24_
 
 1. Add **About** section
 2. Add **Works** section
 3. Add **Footer** section
 4. Minor change on the style
 
-- Commit 1 _2020.06.18_
+- ### Commit 1 _2020.06.18_
 
 1. Set up environment with **node-sass**
 2. Create **Navbar** and **Header**
