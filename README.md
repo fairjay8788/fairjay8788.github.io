@@ -8,6 +8,12 @@ This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put 
 
 ## Commit Log
 
+- ### Commit 5 _2020.07.23_
+
+1. Upload **Portfolio Mockup 1** project
+
+![Screen Shot](./docs/img/ssportfolioMU1.jpg)
+
 - ### Commit 4 _2020.07.16_
 
 1. Upload **Chinese Restaurant** project
