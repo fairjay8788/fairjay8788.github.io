@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o docs/css/ --recursive"
+    "sass": "node-sass -w docs/restaurant -o docs/restaurant --recursive"
   },
   "keywords": [],
   "author": "",

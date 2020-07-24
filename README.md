@@ -8,6 +8,10 @@ This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put 
 
 ## Commit Log
 
+- ### Commit 6 _2020.07.23_
+
+1. Reorganize the docs directory, so each project has its own folder to show codes
+
 - ### Commit 5 _2020.07.23_
 
 1. Upload **Portfolio Mockup 1** project
