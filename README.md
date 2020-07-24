@@ -1,6 +1,6 @@
 # Jie Wu's Portfolio Website
 
-This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put most of my web projects here.
+This is my [portfolio website](https://fairjay8788.github.io). I put most of my web projects here.
 
 > I'm constantly updating the content as I learn more. Hope it will become something I'm proud of.
 
@@ -16,19 +16,19 @@ This is my [portfolio website](https://fairjay8788.github.io/portfolio/). I put 
 
 1. Upload **Portfolio Mockup 1** project
 
-![Screen Shot](./docs/img/ssportfolioMU1.jpg)
+![Screen Shot](./img/ssportfolioMU1.jpg)
 
 - ### Commit 4 _2020.07.16_
 
 1. Upload **Chinese Restaurant** project
 
-![Screen Shot](./docs/img/sschinesefood.jpg)
+![Screen Shot](./img/sschinesefood.jpg)
 
 - ### Commit 3 _2020.07.03_
 
 1. Upload **Number Guessing Game** project
 
-![Screen Shot](./docs/img/ssnumbergame.jpg)
+![Screen Shot](./img/ssnumbergame.jpg)
 
 2. Fill content in **About** section
 3. Seperate **Works** section into different categories
