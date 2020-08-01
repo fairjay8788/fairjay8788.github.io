@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 0 1rem; }
+
+.py-1 {
+  padding: 1rem 0; }
+
+.py-2 {
+  padding: 2rem 0; }
+
+.py-3 {
+  padding: 3rem 0; }
+
+.primary-title {
+  font-family: "Fredoka One", cursive; }
+
+.secondary-title {
+  font-family: "Poiret One", cursive; }
+
+.lt-showcase-bg {
+  background: rgba(255, 255, 255, 0.7); }
+
+.dk-showcase-bg {
+  background: rgba(0, 0, 0, 0.7); }
+
+.lt-primary-bg {
+  background: white; }
+
+.dk-primary-bg {
+  background: black; }
+
+.lt-secondary-bg {
+  background: #ccc; }
+
+.dk-secondary-bg {
+  background: #333; }
+
+.lt-primary-color {
+  color: black; }
+
+.dk-primary-color {
+  color: white; }
+
+#nav {
+  width: 100%;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10; }
+  #nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #nav .container #logo {
+      height: 30px; }
+    #nav .container #menu-wrap {
+      position: relative; }
+      #nav .container #menu-wrap #nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        position: relative; }
+        #nav .container #menu-wrap #nav-menu a {
+          display: block;
+          width: 80px;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          text-decoration: none;
+          color: white; }
+      #nav .container #menu-wrap #nav-slider {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 240px;
+        background: grey;
+        transition: all 0.5s ease-in-out;
+        z-index: -1; }
+    #nav .container #mode-switch {
+      width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #nav .container #mode-switch img {
+        height: 25px;
+        margin: 0 10px; }
+      #nav .container #mode-switch #switch-wrap {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        overflow: hidden; }
+        #nav .container #mode-switch #switch-wrap .wrapper {
+          transition: all 0.3s linear; }
+          #nav .container #mode-switch #switch-wrap .wrapper #switch-flicker {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: white;
+            left: 0;
+            top: 0;
+            z-index: 1; }
+          #nav .container #mode-switch #switch-wrap .wrapper .darkOff {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            top: 0;
+            left: 0;
+            border-radius: 25px;
+            background: grey; }
+          #nav .container #mode-switch #switch-wrap .wrapper .darkOn {
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            top: 0;
+            left: -50%;
+            border-radius: 25px;
+            background: blue; }
+
+#showcase {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  #showcase .container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    justify-items: center; }
+    #showcase .container #showcase-intro h1 {
+      font-size: 3.5rem; }
+    #showcase .container #showcase-intro h2 {
+      font-size: 2rem; }
+  #showcase #showcase-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: -1; }
+    #showcase #showcase-slide::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to right, black, transparent, black); }
+    #showcase #showcase-slide #slides-wrap {
+      height: 100%;
+      display: flex;
+      width: max-content;
+      animation: workSlide 30s linear infinite; }
+      #showcase #showcase-slide #slides-wrap img {
+        height: 100%; }
+
+#about {
+  width: 100%;
+  height: 100vh;
+  background: lightskyblue; }
+
+#work {
+  width: 100%;
+  height: 100vh;
+  background: lightpink; }
+
+#contact {
+  width: 100%;
+  height: 100vh;
+  background: lightgreen; }
+
+@keyframes workSlide {
+  100% {
+    transform: translateX(-66.67%); } }

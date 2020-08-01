@@ -3,177 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="You can find my web development works here. Please feel free to take a look."
-    />
-    <meta
-      name="keywords"
-      content="portfolio,web development,front-end,web application,back-end"
-    />
+    <title>Jie Wu's Portfolio</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700&family=Roboto:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poiret+One&family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
-    <title>My Works | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav id="main-nav" class="py-1">
+    <nav id="nav">
       <div class="container">
-        <img src="./img/logo1.png" alt="logo" id="logo" />
-        <div class="nav-menu">
-          <p>Pretend to be a navbar ...</p>
-          <div class="hamburger">
-            <div class="mid-layer"></div>
+        <img src="./img/logo1.png" id="logo" />
+        <div id="menu-wrap">
+          <ul id="nav-menu">
+            <li><a href="#showcase">Top</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div id="nav-slider"></div>
+        </div>
+        <div id="mode-switch">
+          <p id="mode-text">Go To Dark</p>
+          <img src="./img/rightarrow.gif" />
+          <div id="switch-wrap">
+            <div class="wrapper">
+              <div class="darkOff"></div>
+              <div id="switch-flicker"></div>
+              <div class="darkOn"></div>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <header id="main-heading" class="py-1">
+    <header id="showcase" class="lt-showcase-bg">
       <div class="container">
-        <div class="heading-content">
-          <h1>Congratulations!</h1>
-          <p>You Have Found Jie Wu's Portfolio Site</p>
+        <div id="showcase-intro">
+          <h1 class="primary-title lt-primary-color">Hi, I'm Jie Wu</h1>
+          <h2 class="secondary-title lt-primary-color">
+            Welcome to my portfolio
+          </h2>
+        </div>
+      </div>
+      <div id="showcase-slide">
+        <div id="slides-wrap">
+          <!-- duplicate images at last to make sure infinite animation is smooth -->
+          <img src="./img/sschinesefood.jpg" />
+          <img src="./img/ssnumbergame.jpg" />
+          <img src="./img/ssportfolioMU1.jpg" />
+          <img src="./img/sssitev1.jpg" />
+          <img src="./img/sschinesefood.jpg" />
+          <img src="./img/ssnumbergame.jpg" />
         </div>
       </div>
     </header>
-    <section id="about" class="py-3 bg-lt">
-      <div class="container">
-        <div class="section-info">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-lead">
-            Husband, Father To Be, Son, Dog Owner, Web Developer
-          </p>
-        </div>
-        <img src="./img/aboutme.jpg" alt="" />
-        <div class="self-intro">
-          <p>
-            My name is Jie Wu. My friends call me Jay. I'm a web developer. I
-            studied electrical engineering in Auburn University, AL and software
-            engineering in University of Minnesota, MN. I worked in Toronto
-            Canada for 4 years before coming back to US with my wife in 2016.
-          </p>
-          <br />
-          <p>
-            I like coding, movie, music, games and everything I do together with
-            my family. I'm updating my portfolio on a weekly basis. Hopefully
-            this portfolio will become something I'm proud of. Feel free to
-            click around and check out my works.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section id="works" class="py-3 bg-dk">
-      <div class="container">
-        <div class="section-info">
-          <h2 class="section-title">My Works</h2>
-          <p class="section-lead">
-            Check out my works in different categories. More to come ...
-          </p>
-        </div>
-        <div class="work-category py-1">
-          <div class="category-info">
-            <h3 class="category-title">Mockups</h3>
-            <p class="category-lead">
-              When I see pretty things, I build mockups ( without checking the
-              source, of course ). It includes landing pages for local business,
-              templates from CSS frameworks, or even pretty components. I will
-              include a link to the original template in each of these pages.
-            </p>
-          </div>
-          <div class="work-collection py-1">
-            <div class="work-item">
-              <a href="./portfolioMU1/portfolioMockUp1.html" target="_blank"
-                ><img
-                  src="./img/ssportfolioMU1.jpg"
-                  alt=""
-                  class="screen-shot"
-                />
-                <div class="item-desc">
-                  <h3>Portfolio Mockup 1</h3>
-                  <p>670 Lines of Code</p>
-                </div></a
-              >
-            </div>
-            <div class="work-item">
-              <a href="./restaurant/restaurant.html" target="_blank"
-                ><img
-                  src="./img/sschinesefood.jpg"
-                  alt=""
-                  class="screen-shot"
-                />
-                <div class="item-desc">
-                  <h3>Panda Buffet</h3>
-                  <p>491 Lines of Code</p>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="work-category py-1">
-          <div class="category-info">
-            <h3 class="category-title">Single Page / User Interactive</h3>
-            <p class="category-lead">
-              These are user-interactive projects. I started by building little
-              games. I find it to be the most fun category in this portfolio.
-              Most ideas come from myself, while some of them are inspired by
-              the internet. I will include a link to my inspiration if there is
-              one.
-            </p>
-          </div>
-          <div class="work-collection py-1">
-            <div class="work-item">
-              <a href="./guessnumber/guessnumber.html" target="_blank"
-                ><img src="./img/ssnumbergame.jpg" alt="" class="screen-shot" />
-                <div class="item-desc">
-                  <h3>Number Guessing Game</h3>
-                  <p>523 Lines of Code</p>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="work-category py-1">
-          <div class="category-info">
-            <h3 class="category-title">Evolution of My Portfolio</h3>
-            <p class="category-lead">
-              I'm always learning, so is my portfolio evolving. Not only do I
-              add more works to it weekly, I also change the look of this
-              portfolio from time to time. It may not get updated as often as
-              other project categories, but when I feel boring of the same look
-              some day, it will happen. Here are history versions of my
-              portfolio site.
-            </p>
-          </div>
-          <div class="work-collection py-1">
-            <div class="work-item">
-              <a href="#" target="_blank"
-                ><img src="./img/sssitev1.jpg" alt="" class="screen-shot" />
-                <div class="item-desc">
-                  <h3>Version I</h3>
-                  <p>487 Lines of Code</p>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer id="main-footer" class="py-3">
-      <div class="contain">
-        <p>
-          Code and Design by Jie Wu
-        </p>
-      </div>
-    </footer>
-    <script></script>
+    <section id="about"></section>
+    <section id="work"></section>
+    <section id="contact"></section>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
