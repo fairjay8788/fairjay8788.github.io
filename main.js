@@ -47,6 +47,7 @@ class Mode {
     this.prBgChangeNodeList = document.querySelectorAll(".lt-primary-bg");
     this.seBgChangeNodeList = document.querySelectorAll(".lt-secondary-bg");
     this.prColorChangeNodeList = document.querySelectorAll(".lt-primary-color");
+    this.glowTextNodeList = document.querySelectorAll(".luminousText");
   }
 
   changeMode = () => {
@@ -75,6 +76,13 @@ class Mode {
         // Take care of special styles
         document.getElementById("showcase").classList.remove("lt-showcase-bg");
         document.getElementById("showcase").classList.add("dk-showcase-bg");
+        // Luminous Text
+        this.glowTextNodeList.forEach((e) => {
+          e.classList.add("glowing");
+        });
+        //  About Me Img
+        document.querySelector("#about-details img").src =
+          "./img/programmer.jpg";
       } else {
         // Light Mode
         this.prBgChangeNodeList.forEach((e) => {
@@ -92,6 +100,12 @@ class Mode {
         // Take care of special styles
         document.getElementById("showcase").classList.remove("dk-showcase-bg");
         document.getElementById("showcase").classList.add("lt-showcase-bg");
+        // Luminous Text
+        this.glowTextNodeList.forEach((e) => {
+          e.classList.remove("glowing");
+        });
+        //  About Me Img
+        document.querySelector("#about-details img").src = "./img/aboutme.jpg";
       }
     }
   }
