@@ -45,11 +45,29 @@ body {
 ::placeholder {
   font-family: "Roboto", sans-serif; }
 
+.tag-js, .tag-responsive, .tag-sass {
+  padding: 2px 5px;
+  margin: 0.5rem;
+  margin-left: 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white; }
+
+.tag-js {
+  background: #f7df1e; }
+
+.tag-responsive {
+  background: #ef652a; }
+
+.tag-sass {
+  background: #be608b; }
+
 .lt-showcase-bg {
-  background: rgba(255, 255, 255, 0.7); }
+  background: rgba(255, 255, 255, 0.5); }
 
 .dk-showcase-bg {
-  background: rgba(0, 0, 0, 0.7); }
+  background: rgba(0, 0, 0, 0.5); }
 
 .lt-primary-bg {
   background: white; }
@@ -94,8 +112,10 @@ body {
   top: 0;
   z-index: 10; }
   #nav .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 90px 1fr 180px;
     align-items: center;
+    justify-items: center;
     justify-content: space-between; }
     #nav .container #logo {
       height: 30px; }
@@ -227,7 +247,7 @@ body {
         padding: 1rem;
         font-size: 1.2rem; }
     #about .container #about-skills {
-      width: 50%;
+      width: 80%;
       display: flex;
       align-items: center;
       justify-content: space-around; }
@@ -251,7 +271,7 @@ body {
       justify-content: space-around;
       gap: 1rem; }
       #work .container #major-projects .project-wrap {
-        height: 400px;
+        height: 450px;
         position: relative; }
         #work .container #major-projects .project-wrap .project-img {
           width: 100%;
@@ -271,7 +291,7 @@ body {
             align-items: center;
             justify-content: center;
             color: gold;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             opacity: 0;
             transition: all 0.5s ease; }
           #work .container #major-projects .project-wrap .project-img:hover img {
@@ -284,6 +304,15 @@ body {
           width: 100%;
           padding: 1rem;
           text-align: left; }
+        #work .container #major-projects .project-wrap .project-tags {
+          width: 100%;
+          padding: 0 1rem;
+          position: absolute;
+          left: 0;
+          bottom: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start; }
         #work .container #major-projects .project-wrap .project-source {
           width: 100%;
           height: 50px;
@@ -356,7 +385,7 @@ body {
     justify-items: center;
     gap: 3rem; }
     #contact .container #contact-form {
-      width: 50%;
+      width: 70%;
       text-align: left; }
       #contact .container #contact-form .input-group {
         width: 100%;
@@ -366,7 +395,8 @@ body {
           width: 100%;
           padding: 1rem;
           outline: none;
-          margin-bottom: 0.5rem; }
+          margin-bottom: 0.5rem;
+          font-family: "Roboto", sans-serif; }
           #contact .container #contact-form .input-group input:focus,
           #contact .container #contact-form .input-group textarea:focus {
             border-color: skyblue;
@@ -389,9 +419,6 @@ body {
         padding: 1rem;
         text-align: center;
         margin-bottom: 0.5rem; }
-      #contact .container #contact-form #success-msg {
-        color: green;
-        opacity: 0; }
 
 footer {
   width: 100%;
@@ -411,3 +438,30 @@ footer {
     text-shadow: 0 0 15px; }
   100% {
     text-shadow: none; } }
+
+@media (max-width: 768px) {
+  #nav #menu-wrap {
+    grid-row: 2;
+    grid-column: 1 / span 3; }
+  #nav #mode-switch {
+    grid-row: 1;
+    grid-column: 3; }
+  #showcase .container {
+    grid-template-columns: 1fr; }
+  #about .container #about-details {
+    grid-template-columns: 1fr; }
+    #about .container #about-details img {
+      width: 80%;
+      justify-self: center; }
+  #about .container #about-skills {
+    width: 100%; }
+  #contact .container #contact-form {
+    width: 100%; } }
+
+@media (max-width: 400px) {
+  #showcase .container #showcase-intro h1 {
+    font-size: 3rem; }
+  #showcase .container #showcase-intro h2 {
+    font-size: 1.75rem; }
+  #about .container #about-skills img {
+    width: 30px; } }

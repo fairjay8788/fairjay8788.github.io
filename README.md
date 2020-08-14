@@ -2,46 +2,44 @@
 
 This is my [portfolio website](https://fairjay8788.github.io). I put most of my web projects here.
 
-> I'm constantly updating the content as I learn more. Hope it will become something I'm proud of.
+> I'm constantly updating the content. Hope it will become something I'm proud of.
 
 ---
 
-## Commit Log
+## Major Commits Log
 
-- ### Commit 6 _2020.07.23_
+- ### 2020.8.13
 
-1. Reorganize the docs directory, so each project has its own folder to show codes
+1. Major Update! An entire new look of the portfolio.
 
-- ### Commit 5 _2020.07.23_
+![Screen Shot](./img/sssitev2.jpg)
 
-1. Upload **Portfolio Mockup 1** project
+2. New feature: Light/Dark theme switch. By clicking the toggler in the nav bar, the page switch between a Light appearance and a Dark one. Theme setting will be saved for next visit.
 
-![Screen Shot](./img/ssportfolioMU1.jpg)
+3. Smooth scroll fulfilled by **cferdinandi's** [smooth-scroll](https://github.com/cferdinandi/smooth-scroll).
 
-- ### Commit 4 _2020.07.16_
+4. Highlight background behind the nav menu moves to correct position as page scrolling.
 
-1. Upload **Chinese Restaurant** project
+5. A slide show of my works in the showcase section.
 
-![Screen Shot](./img/sschinesefood.jpg)
+6. Hide minor projects in a drop down.
 
-- ### Commit 3 _2020.07.03_
+7. Last but not least, send me a message with the new [contact form](https://fairjay8788.github.io/index.html#contact)!
 
-1. Upload **Number Guessing Game** project
+- ### 2020.07.23
 
-![Screen Shot](./img/ssnumbergame.jpg)
+1. Upload [Portfolio Mockup I](https://fairjay8788.github.io/portfolioMU1/)
 
-2. Fill content in **About** section
-3. Seperate **Works** section into different categories
-4. Combine commit log with README
+- ### 2020.07.16
 
-- ### Commit 2 _2020.06.24_
+1. Upload [Panda Buffet](https://fairjay8788.github.io/restaurant/)
 
-1. Add **About** section
-2. Add **Works** section
-3. Add **Footer** section
-4. Minor change on the style
+- ### 2020.07.03
 
-- ### Commit 1 _2020.06.18_
+1. Upload [Number Guessing Game](https://fairjay8788.github.io/guessnumber/)
 
-1. Set up environment with **node-sass**
-2. Create **Navbar** and **Header**
+- ### 2020.06.24
+
+1. [Portfolio Version I](https://fairjay8788.github.io/portfolioV1/) launched.
+
+![Screen Shot](./img/sssitev1.jpg)

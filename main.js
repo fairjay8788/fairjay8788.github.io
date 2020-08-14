@@ -8,33 +8,68 @@ const UIContactForm = document.getElementById("contact-form");
 const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
 
 // NavMenu Module
+
 const navMenu = (function () {
-  const liCollection = Array.from(document.querySelectorAll("#nav-menu li"));
   const slider = document.getElementById("nav-slider");
+  // UI section variables
+  // const showcaseSec = document.getElementById("showcase");
+  const aboutSec = document.getElementById("about");
+  const workSec = document.getElementById("work");
+  const contactSec = document.getElementById("contact");
+  // Current position of slider
   let currentLiIndex = 0;
+  // Current section in viewport
+  let currentSectionIndex = 0;
+  let scrollTimer;
   return {
-    moveSlider: function (e) {
-      const clickedIndex = liCollection.indexOf(e.target.parentElement);
-      if (clickedIndex > currentLiIndex) {
-        // click some link on the right side
-        slider.style.setProperty("right", `${320 - (clickedIndex + 1) * 80}px`);
-        setTimeout(() => {
-          slider.style.setProperty("left", `${clickedIndex * 80}px`);
-        }, 500);
-        // update current index
-        currentLiIndex = clickedIndex;
-      } else if (clickedIndex < currentLiIndex) {
-        // click some link on the left side
-        slider.style.setProperty("left", `${clickedIndex * 80}px`);
-        setTimeout(() => {
+    getCurrentSection: function () {
+      // check which section is taking up most of viewport
+      if (contactSec.getBoundingClientRect().top < window.innerHeight / 2) {
+        return (currentSectionIndex = 3);
+      } else if (workSec.getBoundingClientRect().top < window.innerHeight / 2) {
+        return (currentSectionIndex = 2);
+      } else if (
+        aboutSec.getBoundingClientRect().top <
+        window.innerHeight / 2
+      ) {
+        return (currentSectionIndex = 1);
+      } else {
+        return (currentSectionIndex = 0);
+      }
+    },
+    moveSlider: function () {
+      if (scrollTimer !== undefined) {
+        // If scrollTimer is not undefined, it means the callback function in setTimeOut is waiting to be executed. While waiting, scroll event fired again, so page is not done scrolling, clear current timer and start a new timer. Callback will eventually fire after scroll event stops.
+        clearTimeout(scrollTimer);
+      }
+      scrollTimer = setTimeout(() => {
+        // update the currentSectionIndex
+        navMenu.getCurrentSection();
+        // move slider
+        if (currentSectionIndex > currentLiIndex) {
+          // Scrolled to a lower section
           slider.style.setProperty(
             "right",
-            `${320 - (clickedIndex + 1) * 80}px`
+            `${320 - (currentSectionIndex + 1) * 80}px`
           );
-        }, 500);
-        // update current index
-        currentLiIndex = clickedIndex;
-      }
+          setTimeout(() => {
+            slider.style.setProperty("left", `${currentSectionIndex * 80}px`);
+          }, 500);
+          // update current index
+          currentLiIndex = currentSectionIndex;
+        } else if (currentSectionIndex < currentLiIndex) {
+          // Scrolled to a upper section
+          slider.style.setProperty("left", `${currentSectionIndex * 80}px`);
+          setTimeout(() => {
+            slider.style.setProperty(
+              "right",
+              `${320 - (currentSectionIndex + 1) * 80}px`
+            );
+          }, 500);
+          // update current index
+          currentLiIndex = currentSectionIndex;
+        }
+      }, 150);
     },
   };
 })();
@@ -81,7 +116,7 @@ const form = (function () {
   const nameErrMsg = document.getElementById("name-error-msg");
   const emailErrMsg = document.getElementById("email-error-msg");
   const messageErrMsg = document.getElementById("message-error-msg");
-  const successMsg = document.getElementById("success-msg");
+  const submitBtn = document.getElementById("btn-form-submit");
   return {
     validation: function (e) {
       e.preventDefault();
@@ -115,9 +150,9 @@ const form = (function () {
         )
         .catch(console.log);
       form.clearForm();
-      successMsg.style.opacity = "1";
+      submitBtn.value = "Thanks! I will get back to you.";
       setTimeout(() => {
-        successMsg.style.opacity = "0";
+        submitBtn.value = "Send";
       }, 3000);
     },
   };
@@ -240,7 +275,7 @@ const mode = new modeCtrl();
 mode.initMode();
 
 // Listsener
-UINavMenu.addEventListener("click", navMenu.moveSlider);
+document.addEventListener("scroll", navMenu.moveSlider);
 UIModeSwitch.addEventListener("click", mode.switchMode);
 UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
 UIContactForm.addEventListener("submit", form.validation);
