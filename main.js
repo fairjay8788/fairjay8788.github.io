@@ -78,25 +78,27 @@ const navMenu = (function () {
 
 const minorProjects = (function () {
   let isExpanded = false;
+  const minorProjectsContainer = document.querySelector(
+    ".minor-projects-container"
+  );
   const minorProjectsMain = document.querySelector(".minor-projects-main");
   const chevronUp = document.querySelector(
     ".minor-projects-header .fa-chevron-up"
   );
-  // Get the target height to expand to and then hide the block
-  const targetHeight = minorProjectsMain.getBoundingClientRect().height;
-  minorProjectsMain.style.setProperty("height", "0");
-  minorProjectsMain.style.setProperty("opacity", "0");
   return {
     expand: function () {
+      // Get the most updated height everytime header is clicked
+      const targetHeight = minorProjectsContainer.getBoundingClientRect()
+        .height;
       if (!isExpanded) {
         // Expand to target height
         minorProjectsMain.style.setProperty("height", `${targetHeight}px`);
-        minorProjectsMain.style.setProperty("opacity", "1");
+        minorProjectsContainer.style.setProperty("opacity", "1");
         chevronUp.style.setProperty("transform", "rotate(180deg)");
         isExpanded = true;
       } else {
         minorProjectsMain.style.setProperty("height", "0");
-        minorProjectsMain.style.setProperty("opacity", "0");
+        minorProjectsContainer.style.setProperty("opacity", "0");
         chevronUp.style.setProperty("transform", "rotate(0)");
         isExpanded = false;
       }
