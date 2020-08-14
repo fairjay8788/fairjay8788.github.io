@@ -465,25 +465,29 @@ body {
           width: 100%;
           overflow: hidden;
           position: relative;
-          img {
-            width: 100%;
-            transition: all 0.5s linear;
+          a {
+            display: inline-block;
+            img {
+              width: 100%;
+              transition: all 0.5s linear;
+            }
+            .minor-project-overlay {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: -100%;
+              left: 0;
+              opacity: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: gold;
+              font-size: 1rem;
+              transition: all 0.5s ease;
+            }
           }
-          .minor-project-overlay {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: -100%;
-            left: 0;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: gold;
-            font-size: 1rem;
-            transition: all 0.5s ease;
-          }
+
           &:hover {
             img {
               transform: scale(1.5);

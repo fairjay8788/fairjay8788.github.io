@@ -352,23 +352,25 @@ body {
           width: 100%;
           overflow: hidden;
           position: relative; }
-          #work .container #minor-projects .minor-projects-main .minor-project-img img {
-            width: 100%;
-            transition: all 0.5s linear; }
-          #work .container #minor-projects .minor-projects-main .minor-project-img .minor-project-overlay {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: -100%;
-            left: 0;
-            opacity: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: gold;
-            font-size: 1rem;
-            transition: all 0.5s ease; }
+          #work .container #minor-projects .minor-projects-main .minor-project-img a {
+            display: inline-block; }
+            #work .container #minor-projects .minor-projects-main .minor-project-img a img {
+              width: 100%;
+              transition: all 0.5s linear; }
+            #work .container #minor-projects .minor-projects-main .minor-project-img a .minor-project-overlay {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: -100%;
+              left: 0;
+              opacity: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: gold;
+              font-size: 1rem;
+              transition: all 0.5s ease; }
           #work .container #minor-projects .minor-projects-main .minor-project-img:hover img {
             transform: scale(1.5);
             filter: grayscale(1) brightness(30%); }
