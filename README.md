@@ -8,6 +8,10 @@ This is my [portfolio website](https://fairjay8788.github.io). I put most of my 
 
 ## Major Commits Log
 
+- ### 2020.8.25
+
+1. Redesign [Panda Buffet](https://fairjay8788.github.io/restaurant/). Read more at [here](https://github.com/fairjay8788/fairjay8788.github.io/tree/master/restaurant).
+
 - ### 2020.8.13
 
 1. Major Update! An entire new look of the portfolio.

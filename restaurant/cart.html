@@ -15,7 +15,7 @@
       href="../img/chinesefood.ico"
     />
     <link rel="stylesheet" href="restaurant.css" />
-    <title>Panda Buffet | Home</title>
+    <title>Panda Buffet | Checkout</title>
   </head>
   <body>
     <div id="nav-hamburger">
@@ -28,12 +28,10 @@
       ></label>
     </div>
     <div id="order-cart">
-      <a href="./cart.html">
-        <div class="cart-wrap">
-          <div id="number-in-order"></div>
-          <div class="table-top"></div>
-        </div>
-      </a>
+      <div class="cart-wrap">
+        <div id="number-in-order"></div>
+        <div class="table-top"></div>
+      </div>
     </div>
     <div id="nav-pane">
       <div class="left-pane">
@@ -47,28 +45,16 @@
         </ul>
       </div>
     </div>
-    <div id="home">
+    <div id="cart">
       <div class="container">
-        <div class="wrapper">
-          <h1 class="title">Panda <span class="highlight">Buffet</span></h1>
-          <p class="banner">Best Chinese Food Buffet In Town</p>
-          <ul class="social-media">
-            <li>
-              <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-pinterest fa-2x"></i></a>
-            </li>
-          </ul>
+        <div class="wrapper py-4">
+          <h1 class="sub-title">Your <span class="highlight">Order</span></h1>
+          <p class="sub-banner">Ready to checkout?</p>
+          <div id="cart-summary"></div>
         </div>
       </div>
     </div>
     <script src="main.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

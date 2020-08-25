@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../img/chinesefood.ico"
+    />
+    <link rel="stylesheet" href="restaurant.css" />
+    <title>Panda Buffet | Menu</title>
+  </head>
+  <body>
+    <div id="nav-hamburger">
+      <label for="toggle">
+        <input type="checkbox" id="toggle" />
+        <div class="hamburger">
+          <div class="upper"></div>
+          <div class="mid"></div>
+          <div class="lower"></div></div
+      ></label>
+    </div>
+    <div id="order-cart">
+      <a href="./cart.html">
+        <div class="cart-wrap">
+          <div id="number-in-order"></div>
+          <div class="table-top"></div>
+        </div>
+      </a>
+    </div>
+    <div id="nav-pane">
+      <div class="left-pane">
+        <img src="../img/chinesefood2.jpg" alt="delicious food" />
+      </div>
+      <div class="right-pane">
+        <ul class="nav-list">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./menu.html" class="current">MENU</a></li>
+          <li><a href="./contact.html">REACH US</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <div class="container">
+        <div class="wrapper py-4">
+          <h1 class="sub-title">Our <span class="highlight">Menu</span></h1>
+          <p class="sub-banner">What are you craving for...</p>
+          <div class="menu-items">
+            <div class="item">
+              <img src="../img/chinesefood3.jpg" />
+              <div class="input-group" id="dish-1">
+                <button class="plus quan-btn">+</button>
+                <i class="fas fa-utensils status-icon"></i>
+                <input class="quantity" type="number" />
+                <i class="fas fa-cart-plus add-btn"></i>
+                <button class="minus quan-btn">-</button>
+                <div class="status-msg"></div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../img/chinesefood4.jpg" />
+              <div class="input-group" id="dish-2">
+                <button class="plus quan-btn">+</button>
+                <i class="fas fa-utensils status-icon"></i>
+                <input class="quantity" type="number" />
+                <i class="fas fa-cart-plus add-btn"></i>
+                <button class="minus quan-btn">-</button>
+                <div class="status-msg"></div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../img/chinesefood5.jpg" />
+              <div class="input-group" id="dish-3">
+                <button class="plus quan-btn">+</button>
+                <i class="fas fa-utensils status-icon"></i>
+                <input class="quantity" type="number" />
+                <i class="fas fa-cart-plus add-btn"></i>
+                <button class="minus quan-btn">-</button>
+                <div class="status-msg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="menu.js"></script>
+  </body>
+</html>
