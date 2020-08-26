@@ -1,3 +1,4 @@
+console.log("before everything");
 // UI
 const UINavMenu = document.getElementById("nav-menu");
 const UIModeSwitch = document.getElementById("switch-flicker");
