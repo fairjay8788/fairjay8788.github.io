@@ -6,7 +6,7 @@ const UIContactForm = document.getElementById("contact-form");
 
 console.log("before smooth scroll");
 // Smooth Scroll
-const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
+// const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
 console.log("after smooth scroll");
 
 // NavMenu Module
