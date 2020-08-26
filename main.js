@@ -267,6 +267,7 @@ class modeCtrl {
     this.currentMode.paintMode();
   };
   switchMode = () => {
+    console.log("click fired");
     this.currentMode.next();
     this.currentMode.paintMode();
   };
@@ -281,3 +282,11 @@ document.addEventListener("scroll", navMenu.moveSlider);
 UIModeSwitch.addEventListener("click", mode.switchMode);
 UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
 UIContactForm.addEventListener("submit", form.validation);
+
+console.log("testing switch 1");
+document.getElementById("switch-wrap").addEventListener("click", () => {
+  console.log("click in switch wrap");
+});
+document.body.addEventListener("click", () => {
+  console.log("click in body");
+});
