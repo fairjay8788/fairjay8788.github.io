@@ -1,9 +1,9 @@
 console.log("before everything");
 // UI
-// const UINavMenu = document.getElementById("nav-menu");
-// const UIModeSwitch = document.getElementById("switch-flicker");
-// const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
-// const UIContactForm = document.getElementById("contact-form");
+const UINavMenu = document.getElementById("nav-menu");
+const UIModeSwitch = document.getElementById("switch-flicker");
+const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
+const UIContactForm = document.getElementById("contact-form");
 
 console.log("before smooth scroll");
 // Smooth Scroll
@@ -79,35 +79,37 @@ console.log("after smooth scroll");
 
 // // Minor Projects Expand Module
 
-// const minorProjects = (function () {
-//   let isExpanded = false;
-//   const minorProjectsContainer = document.querySelector(
-//     ".minor-projects-container"
-//   );
-//   const minorProjectsMain = document.querySelector(".minor-projects-main");
-//   const chevronUp = document.querySelector(
-//     ".minor-projects-header .fa-chevron-up"
-//   );
-//   return {
-//     expand: function () {
-//       // Get the most updated height everytime header is clicked
-//       const targetHeight = minorProjectsContainer.getBoundingClientRect()
-//         .height;
-//       if (!isExpanded) {
-//         // Expand to target height
-//         minorProjectsMain.style.setProperty("height", `${targetHeight}px`);
-//         minorProjectsContainer.style.setProperty("opacity", "1");
-//         chevronUp.style.setProperty("transform", "rotate(180deg)");
-//         isExpanded = true;
-//       } else {
-//         minorProjectsMain.style.setProperty("height", "0");
-//         minorProjectsContainer.style.setProperty("opacity", "0");
-//         chevronUp.style.setProperty("transform", "rotate(0)");
-//         isExpanded = false;
-//       }
-//     },
-//   };
-// })();
+const minorProjects = (function () {
+  let isExpanded = false;
+  const minorProjectsContainer = document.querySelector(
+    ".minor-projects-container"
+  );
+  const minorProjectsMain = document.querySelector(".minor-projects-main");
+  const chevronUp = document.querySelector(
+    ".minor-projects-header .fa-chevron-up"
+  );
+  return {
+    expand: function () {
+      // Get the most updated height everytime header is clicked
+      const targetHeight = minorProjectsContainer.getBoundingClientRect()
+        .height;
+      if (!isExpanded) {
+        // Expand to target height
+        minorProjectsMain.style.setProperty("height", `${targetHeight}px`);
+        minorProjectsContainer.style.setProperty("opacity", "1");
+        chevronUp.style.setProperty("transform", "rotate(180deg)");
+        isExpanded = true;
+      } else {
+        minorProjectsMain.style.setProperty("height", "0");
+        minorProjectsContainer.style.setProperty("opacity", "0");
+        chevronUp.style.setProperty("transform", "rotate(0)");
+        isExpanded = false;
+      }
+    },
+  };
+})();
+
+console.log("after expand module");
 
 // // Contact Form Submission Module
 
@@ -286,7 +288,7 @@ console.log("after smooth scroll");
 // UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
 // UIContactForm.addEventListener("submit", form.validation);
 
-// console.log("testing switch 1");
+console.log("testing switch 1");
 // document.getElementById("switch-wrap").addEventListener("click", () => {
 //   console.log("click in switch wrap");
 // });
