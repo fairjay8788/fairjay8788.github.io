@@ -1,17 +1,13 @@
-console.log("before everything");
 // UI
 const UINavMenu = document.getElementById("nav-menu");
 const UIModeSwitch = document.getElementById("switch-flicker");
 const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
 const UIContactForm = document.getElementById("contact-form");
 
-console.log("before smooth scroll");
 // Smooth Scroll
-// const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
-console.log("after smooth scroll");
+const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
 
 // NavMenu Module
-
 const navMenu = (function () {
   const slider = document.getElementById("nav-slider");
   // UI section variables
@@ -77,8 +73,6 @@ const navMenu = (function () {
   };
 })();
 
-console.log("after nav module");
-
 // // Minor Projects Expand Module
 
 const minorProjects = (function () {
@@ -110,8 +104,6 @@ const minorProjects = (function () {
     },
   };
 })();
-
-console.log("after expand module");
 
 // // Contact Form Submission Module
 
@@ -166,8 +158,6 @@ const form = (function () {
     },
   };
 })();
-
-console.log("after form module");
 
 // Mode State (implement state pattern / not best pattern in this case, just practice)
 
@@ -276,7 +266,6 @@ class modeCtrl {
     this.currentMode.paintMode();
   };
   switchMode = () => {
-    console.log("click fired");
     this.currentMode.next();
     this.currentMode.paintMode();
   };
@@ -286,18 +275,8 @@ class modeCtrl {
 const mode = new modeCtrl();
 mode.initMode();
 
-console.log("after mode init");
-
 // // Listsener
-// document.addEventListener("scroll", navMenu.moveSlider);
-// UIModeSwitch.addEventListener("click", mode.switchMode);
+document.addEventListener("scroll", navMenu.moveSlider);
+UIModeSwitch.addEventListener("click", mode.switchMode);
 UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
-// UIContactForm.addEventListener("submit", form.validation);
-
-console.log("testing switch 1");
-document.getElementById("switch-wrap").addEventListener("click", () => {
-  console.log("click in switch wrap");
-});
-document.body.addEventListener("click", () => {
-  console.log("click in body");
-});
+UIContactForm.addEventListener("submit", form.validation);
