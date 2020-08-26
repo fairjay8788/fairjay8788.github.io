@@ -4,8 +4,10 @@ const UIModeSwitch = document.getElementById("switch-flicker");
 const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
 const UIContactForm = document.getElementById("contact-form");
 
+console.log("before smooth scroll");
 // Smooth Scroll
 const scroll = new SmoothScroll('a[href*="#"]', { speed: 800 });
+console.log("after smooth scroll");
 
 // NavMenu Module
 
