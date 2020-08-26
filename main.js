@@ -289,10 +289,10 @@ mode.initMode();
 console.log("after mode init");
 
 // // Listsener
-document.addEventListener("scroll", navMenu.moveSlider);
-UIModeSwitch.addEventListener("click", mode.switchMode);
+// document.addEventListener("scroll", navMenu.moveSlider);
+// UIModeSwitch.addEventListener("click", mode.switchMode);
 UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
-UIContactForm.addEventListener("submit", form.validation);
+// UIContactForm.addEventListener("submit", form.validation);
 
 console.log("testing switch 1");
 document.getElementById("switch-wrap").addEventListener("click", () => {
