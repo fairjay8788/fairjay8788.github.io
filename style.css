@@ -157,7 +157,8 @@ body {
         width: 50px;
         height: 25px;
         border-radius: 25px;
-        overflow: hidden; }
+        overflow: hidden;
+        cursor: pointer; }
         #nav .container #mode-switch #switch-wrap .wrapper {
           transition: all 0.3s linear; }
           #nav .container #mode-switch #switch-wrap .wrapper #switch-flicker {
@@ -168,8 +169,7 @@ body {
             background: white;
             left: 0;
             top: 0;
-            z-index: 1;
-            cursor: pointer; }
+            z-index: 1; }
           #nav .container #mode-switch #switch-wrap .wrapper .darkOff {
             position: absolute;
             width: 50px;

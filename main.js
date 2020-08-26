@@ -1,6 +1,6 @@
 // UI
 const UINavMenu = document.getElementById("nav-menu");
-const UIModeSwitch = document.getElementById("switch-flicker");
+const UIModeSwitch = document.getElementById("switch-wrap");
 const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
 const UIContactForm = document.getElementById("contact-form");
 
@@ -159,124 +159,104 @@ const form = (function () {
   };
 })();
 
-// Mode State (implement state pattern / not best pattern in this case, just practice)
-
-class lightMode {
-  constructor(controller) {
-    this.ctrl = controller;
-  }
-  paintMode() {
-    this.ctrl.prBgChangeNodeList.forEach((ele) => {
-      ele.classList.remove("dk-primary-bg");
-      ele.classList.add("lt-primary-bg");
-    });
-    this.ctrl.seBgChangeNodeList.forEach((ele) => {
-      ele.classList.remove("dk-secondary-bg");
-      ele.classList.add("lt-secondary-bg");
-    });
-    this.ctrl.prColorChangeNodeList.forEach((ele) => {
-      ele.classList.remove("dk-primary-color");
-      ele.classList.add("lt-primary-color");
-    });
-    // Take care of special styles
-    // Showcase Background
-    document.getElementById("showcase").classList.remove("dk-showcase-bg");
-    document.getElementById("showcase").classList.add("lt-showcase-bg");
-    // Luminous Text
-    this.ctrl.glowTextNodeList.forEach((ele) => {
-      ele.classList.remove("glowing");
-    });
-    //  About Me Img
-    document.querySelector("#about-details img").src = "./img/aboutme.jpg";
-    // Flicker
-    this.ctrl.flicker.style.setProperty("transform", "translateX(0)");
-    document.getElementById("mode-text").textContent = "Go To Dark";
-    // Form Submit Button
-    document
-      .getElementById("btn-form-submit")
-      .style.setProperty("background", "black");
-    document
-      .getElementById("btn-form-submit")
-      .style.setProperty("color", "white");
-  }
-  next() {
-    this.ctrl.currentMode = new darkMode(this.ctrl);
-    localStorage.setItem("portfolioMode", "dark");
-  }
-}
-
-class darkMode {
-  constructor(controller) {
-    this.ctrl = controller;
-  }
-  paintMode() {
-    this.ctrl.prBgChangeNodeList.forEach((ele) => {
-      ele.classList.remove("lt-primary-bg");
-      ele.classList.add("dk-primary-bg");
-    });
-    this.ctrl.seBgChangeNodeList.forEach((ele) => {
-      ele.classList.remove("lt-secondary-bg");
-      ele.classList.add("dk-secondary-bg");
-    });
-    this.ctrl.prColorChangeNodeList.forEach((ele) => {
-      ele.classList.remove("lt-primary-color");
-      ele.classList.add("dk-primary-color");
-    });
-    // Take care of special styles
-    // Showcase Background
-    document.getElementById("showcase").classList.remove("lt-showcase-bg");
-    document.getElementById("showcase").classList.add("dk-showcase-bg");
-    // Luminous Text
-    this.ctrl.glowTextNodeList.forEach((ele) => {
-      ele.classList.add("glowing");
-    });
-    // About Me Img
-    document.querySelector("#about-details img").src = "./img/programmer.jpg";
-    // Flicker
-    this.ctrl.flicker.style.setProperty("transform", "translateX(25px)");
-    document.getElementById("mode-text").textContent = "Go To Light";
-    // Form Submit Button
-    document
-      .getElementById("btn-form-submit")
-      .style.setProperty("background", "white");
-    document
-      .getElementById("btn-form-submit")
-      .style.setProperty("color", "black");
-  }
-  next() {
-    this.ctrl.currentMode = new lightMode(this.ctrl);
-    localStorage.setItem("portfolioMode", "light");
-  }
-}
-
-class modeCtrl {
-  constructor() {
-    this.currentMode =
-      localStorage.getItem("portfolioMode") === "dark"
-        ? new darkMode(this)
-        : new lightMode(this);
-    // querySelectorAll returns static(not live) NodeList
-    this.prBgChangeNodeList = document.querySelectorAll(".lt-primary-bg");
-    this.seBgChangeNodeList = document.querySelectorAll(".lt-secondary-bg");
-    this.prColorChangeNodeList = document.querySelectorAll(".lt-primary-color");
-    this.glowTextNodeList = document.querySelectorAll(".luminousText");
-    this.flicker = document.querySelector("#switch-wrap .wrapper");
-  }
-  initMode = () => {
-    this.currentMode.paintMode();
+const mode = (function () {
+  // true === dark mode ; false === light mode
+  let currentMode = JSON.parse(localStorage.getItem("portfolioMode"))
+    ? true
+    : false;
+  // querySelectorAll returns static(not live) NodeList
+  const prBgChangeNodeList = document.querySelectorAll(".lt-primary-bg");
+  const seBgChangeNodeList = document.querySelectorAll(".lt-secondary-bg");
+  const prColorChangeNodeList = document.querySelectorAll(".lt-primary-color");
+  const glowTextNodeList = document.querySelectorAll(".luminousText");
+  const flicker = document.querySelector("#switch-wrap .wrapper");
+  return {
+    initMode: function () {
+      if (!currentMode) {
+        // Light Mode
+        prBgChangeNodeList.forEach((ele) => {
+          ele.classList.remove("dk-primary-bg");
+          ele.classList.add("lt-primary-bg");
+        });
+        seBgChangeNodeList.forEach((ele) => {
+          ele.classList.remove("dk-secondary-bg");
+          ele.classList.add("lt-secondary-bg");
+        });
+        prColorChangeNodeList.forEach((ele) => {
+          ele.classList.remove("dk-primary-color");
+          ele.classList.add("lt-primary-color");
+        });
+        // Take care of special styles
+        // Showcase Background
+        document.getElementById("showcase").classList.remove("dk-showcase-bg");
+        document.getElementById("showcase").classList.add("lt-showcase-bg");
+        // Luminous Text
+        glowTextNodeList.forEach((ele) => {
+          ele.classList.remove("glowing");
+        });
+        //  About Me Img
+        document.querySelector("#about-details img").src = "./img/aboutme.jpg";
+        // Flicker
+        flicker.style.setProperty("transform", "translateX(0)");
+        document.getElementById("mode-text").textContent = "Go To Dark";
+        // Form Submit Button
+        document
+          .getElementById("btn-form-submit")
+          .style.setProperty("background", "black");
+        document
+          .getElementById("btn-form-submit")
+          .style.setProperty("color", "white");
+      } else {
+        // Dark Mode
+        prBgChangeNodeList.forEach((ele) => {
+          ele.classList.remove("lt-primary-bg");
+          ele.classList.add("dk-primary-bg");
+        });
+        seBgChangeNodeList.forEach((ele) => {
+          ele.classList.remove("lt-secondary-bg");
+          ele.classList.add("dk-secondary-bg");
+        });
+        prColorChangeNodeList.forEach((ele) => {
+          ele.classList.remove("lt-primary-color");
+          ele.classList.add("dk-primary-color");
+        });
+        // Take care of special styles
+        // Showcase Background
+        document.getElementById("showcase").classList.remove("lt-showcase-bg");
+        document.getElementById("showcase").classList.add("dk-showcase-bg");
+        // Luminous Text
+        glowTextNodeList.forEach((ele) => {
+          ele.classList.add("glowing");
+        });
+        // About Me Img
+        document.querySelector("#about-details img").src =
+          "./img/programmer.jpg";
+        // Flicker
+        flicker.style.setProperty("transform", "translateX(25px)");
+        document.getElementById("mode-text").textContent = "Go To Light";
+        // Form Submit Button
+        document
+          .getElementById("btn-form-submit")
+          .style.setProperty("background", "white");
+        document
+          .getElementById("btn-form-submit")
+          .style.setProperty("color", "black");
+      }
+    },
+    switchMode: function () {
+      currentMode = !currentMode;
+      localStorage.setItem("portfolioMode", JSON.stringify(currentMode));
+    },
   };
-  switchMode = () => {
-    this.currentMode.next();
-    this.currentMode.paintMode();
-  };
-}
+})();
 
-// Init class
-const mode = new modeCtrl();
 mode.initMode();
 
 // // Listsener
 document.addEventListener("scroll", navMenu.moveSlider);
-UIModeSwitch.addEventListener("click", mode.switchMode);
+UIModeSwitch.addEventListener("click", () => {
+  mode.switchMode();
+  mode.initMode();
+});
 UIMinorProjectsHeader.addEventListener("click", minorProjects.expand);
 UIContactForm.addEventListener("submit", form.validation);
