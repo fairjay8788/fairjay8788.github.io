@@ -157,7 +157,6 @@ body {
         width: 50px;
         height: 25px;
         border-radius: 25px;
-        cursor: pointer;
         overflow: hidden; }
         #nav .container #mode-switch #switch-wrap .wrapper {
           transition: all 0.3s linear; }
@@ -165,11 +164,14 @@ body {
             position: absolute;
             width: 25px;
             height: 25px;
+            border: none;
+            outline: none;
             border-radius: 50%;
             background: white;
             left: 0;
             top: 0;
-            z-index: 1; }
+            z-index: 1;
+            cursor: pointer; }
           #nav .container #mode-switch #switch-wrap .wrapper .darkOff {
             position: absolute;
             width: 50px;

@@ -1,6 +1,6 @@
 // UI
 const UINavMenu = document.getElementById("nav-menu");
-const UIModeSwitch = document.getElementById("switch-wrap");
+const UIModeSwitch = document.getElementById("switch-flicker");
 const UIMinorProjectsHeader = document.querySelector(".minor-projects-header");
 const UIContactForm = document.getElementById("contact-form");
 
