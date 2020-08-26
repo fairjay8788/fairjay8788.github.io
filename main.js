@@ -292,6 +292,6 @@ console.log("testing switch 1");
 // document.getElementById("switch-wrap").addEventListener("click", () => {
 //   console.log("click in switch wrap");
 // });
-// document.body.addEventListener("click", () => {
-//   console.log("click in body");
-// });
+document.body.addEventListener("click", () => {
+  console.log("click in body");
+});
